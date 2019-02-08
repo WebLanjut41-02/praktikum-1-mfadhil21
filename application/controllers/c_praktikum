@@ -1,0 +1,36 @@
+<?php  
+
+class c_praktikum extends CI_Controller
+{
+		public function __construct()
+		{
+			parent::__construct();
+			$this->load->helper('url');
+			
+		}
+
+		public function index()
+		{
+			$data['judul'] = "awal";
+			$this->load->view('v_header',$data);
+			$this->load->view('v_login', $data);
+		}
+		public function input()
+		{
+			$user= $this->input->post('user');
+			$pass= $this->inpur->post('pass');
+			if ($user == "admin" && $pass == "admin") {
+				$this->session->set_userdata('user', $user);
+				$this->session->set_userdata('pass', $pass);
+				redirect('/praktikum/v_list');
+			}else{
+
+			}
+		}
+		public function logout()
+		{
+			$sess = array('user' => , );
+			$this->session->unset_->
+		}
+}
+?>
